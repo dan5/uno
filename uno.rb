@@ -1,5 +1,9 @@
 class UnoServer
   def initialize()
+    reset
+  end
+
+  def reset
     @cards = create_cards.shuffle
     @_cards = []
   end
@@ -33,10 +37,10 @@ class UnoServer
     @_cards.push card
   end
 
-  def reset
+  def shuffle
     @cards += @_cards
-    @_cards = []
     @cards.shuffle!
+    @_cards = []
   end
 end
 
