@@ -1,0 +1,25 @@
+
+==server
+
+ ruby uno.rb server
+
+==client
+
+ irb -r ./uno.rb
+
+===setup
+
+ irb > uno = DRbObject.new_with_uri('druby://localhost:00000')
+ irb > c = UnoClient.new(uno)
+
+===draw card
+
+ irb > c.draw
+
+===show cards
+
+ irb > c.show
+
+===throw card
+
+ irb > c.throw idx
