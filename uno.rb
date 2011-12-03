@@ -41,17 +41,17 @@ class UnoServer
 end
 
 class UnoClient
-  def initialize(uno)
-    @uno = uno
+  def initialize(server)
+    @server = server
     @cards = []
   end
 
   def draw
-    @cards << @uno.draw
+    @cards << @server.draw
   end
   
   def throw(i)
-    @uno.throw @cards.delete_at(i)
+    @server.throw @cards.delete_at(i)
   end
   
   def show
